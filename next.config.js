@@ -2,7 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['image.tmdb.org'],
-    path: `/_next/image`,
+    domains: ['image.tmdb.org']
   }
 }
