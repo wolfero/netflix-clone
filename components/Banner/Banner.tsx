@@ -9,6 +9,10 @@ interface Props {
 	netflixOriginals: Movie[];
 }
 
+const myLoader = ({ src }) => {
+	return `${baseUrl}${src}`;
+};
+
 const Banner = ({ netflixOriginals }: Props) => {
 	const [movie, setMovie] = useState<Movie | null>(null);
 	const [imageLink, setImageLink] = useState<string>('/#');
@@ -18,9 +22,8 @@ const Banner = ({ netflixOriginals }: Props) => {
 			const randomMovie = Math.floor(Math.random() * netflixOriginals.length);
 			setMovie(netflixOriginals[randomMovie]);
 			setImageLink(
-				baseUrl +
-					(netflixOriginals[randomMovie].backdrop_path ||
-						netflixOriginals[randomMovie].poster_path)
+				netflixOriginals[randomMovie].backdrop_path ||
+					netflixOriginals[randomMovie].poster_path
 			);
 		}
 	}, [netflixOriginals]);
@@ -30,7 +33,7 @@ const Banner = ({ netflixOriginals }: Props) => {
 	return (
 		<div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
 			<div className="absolute top-0 left-0 -z-10 h-[95vh] w-screen">
-				<Image src={imageLink} layout="fill" objectFit="cover" priority />
+				<Image loader={myLoader} src={imageLink} layout="fill" objectFit="cover" priority />
 			</div>
 			<h1 className="text-2xl font-bold md:text-4xl lg:text-7xl">
 				{movie?.title || movie?.name || movie?.original_name}
