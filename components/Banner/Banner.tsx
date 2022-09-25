@@ -17,6 +17,8 @@ const Banner = ({ netflixOriginals }: Props) => {
 			const randomMovie = Math.floor(Math.random() * netflixOriginals.length);
 			setMovie(netflixOriginals[randomMovie]);
 		}
+
+		console.log('hola');
 	}, [netflixOriginals]);
 
     console.log(movie);
