@@ -13,11 +13,11 @@ const Banner = ({ netflixOriginals }: Props) => {
 	const [movie, setMovie] = useState<Movie | null>(null);
 
 	useEffect(() => {
-		const randomMovie = Math.floor(Math.random() * netflixOriginals.length);
-		setMovie(netflixOriginals[randomMovie]);
+		if (netflixOriginals) {
+			const randomMovie = Math.floor(Math.random() * netflixOriginals.length);
+			setMovie(netflixOriginals[randomMovie]);
+		}
 	}, [netflixOriginals]);
-
-	console.log(movie);
 
 	return (
 		<div className="flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:justify-end lg:pb-12">
@@ -31,7 +31,7 @@ const Banner = ({ netflixOriginals }: Props) => {
 			<h1 className="text-2xl font-bold md:text-4xl lg:text-7xl">
 				{movie?.title || movie?.name || movie?.original_name}
 			</h1>
-			<p className="text-shadow-md max-w-xs text-xs md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl">
+			<p className="max-w-xs text-xs text-shadow-md md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl">
 				{movie?.overview}
 			</p>
 
