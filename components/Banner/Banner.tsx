@@ -19,7 +19,7 @@ const Banner = ({ netflixOriginals }: Props) => {
 			console.log(netflixOriginals,'entro')
 		}
 
-		console.log('hola');
+		console.log(netflixOriginals,'fuera');
 	}, [netflixOriginals]);
 
     console.log(movie);
