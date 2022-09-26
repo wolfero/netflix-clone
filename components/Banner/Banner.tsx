@@ -21,7 +21,7 @@ const Banner = ({ netflixOriginals }: Props) => {
 	return (
 		<>
 			{movie ? (
-				<div className="relative flex flex-col space-y-2 md:space-y-4 lg:pb-12">
+				<div className="relative flex flex-col space-y-2 md:space-y-4">
 					<img
 						className="w-screen brightness-50"
 						src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`}
