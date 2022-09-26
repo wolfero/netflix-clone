@@ -36,9 +36,7 @@ const Home = ({
 				<title>Home - Netflix Clone By Fero</title>
 				<link rel="icon" href="/assets/netflix.ico" />
 			</Head>
-
 			<Header />
-
 			<main className="relative">
 				<Banner netflixOriginals={netflixOriginals} />
 				<section className='relative space-y-5 lg:-top-32'>

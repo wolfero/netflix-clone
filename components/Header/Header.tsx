@@ -33,6 +33,10 @@ function Header() {
 					<li className="headerLink">My List</li>
 				</ul>
 			</div>
+
+			{/* REMOVE */}
+			<h1 className="text-2xl">🚧 IN DEVELOPMENT 🚧</h1>
+
 			<div className="flex items-center space-x-4 text-sm font-light">
 				<SearchIcon className="hidden h-6 w-6 sm:inline" />
 				<p className="hidden lg:inline">Kids</p>
