@@ -41,7 +41,7 @@ const Home = ({
 
 			<main className="relative">
 				<Banner netflixOriginals={netflixOriginals} />
-				<section className='relative lg:-top-32'>
+				<section className='relative space-y-5 lg:-top-32'>
 					{/* My list */}
 					<Row movies={topRated} title="Top rated" />
 					<Row movies={trendingNow} title="Trending now" />
