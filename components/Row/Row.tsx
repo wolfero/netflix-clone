@@ -12,19 +12,17 @@ interface Props {
 
 const Row = ({ movies, title }: Props) => {
 	return (
-		<div className="relative h-40 space-y-0.5 pl-4 md:space-y-1 lg:pl-16">
+		<div className="relative h-54 space-y-0.5 pl-4 md:space-y-1 lg:pl-16">
 			<h2 className="w-56 cursor-pointer text-sm font-semibold text-[#e5e5e5] transition duration-200 hover:text-white md:text-2xl">
 				{title}
 			</h2>
 			<div className="group relative md:-ml-2">
 				<ChevronLeftIcon className="thumbnailButton left-2" />
-
 				<div className="flex items-center space-x-1 overflow-x-scroll scrollbar-hide md:ml-2 md:space-x-2.5">
 					{movies.map((movie) => (
 						<Thumbnail key={movie.id} movie={movie} />
 					))}
 				</div>
-
 				<ChevronRightIcon className="thumbnailButton right-2" />
 			</div>
 		</div>
